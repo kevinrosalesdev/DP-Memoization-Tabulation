@@ -36,8 +36,8 @@ def llamada_tiempo(fichero,ft):
                 table[i].append(0)
         st = time.time()
         print(optimalStrategyOfGameRecursive(table, arr, 0, len(arr) - 1))
-        medida = st - time.time()
-        ft.write(str(medida) + "segundos\n")
+        medida = time.time() - st
+        ft.write(str(len(arr)) + "--" + str(medida) + "\n")
         print("tiempo: " + str(medida))
 
 
