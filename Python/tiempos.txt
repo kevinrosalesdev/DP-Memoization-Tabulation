@@ -1,0 +1,5 @@
+##### TIEMPOS fichero_básico.txt ####
+0.0segundos
+0.0segundos
+0.0segundos
+0.0segundos

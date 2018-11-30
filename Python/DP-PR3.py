@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+import sys
+import time
+
+
 def optimalStrategyOfGameRecursive(table,arr,i,j):
     if(i == j):
         return arr[i]
@@ -10,64 +15,82 @@ def optimalStrategyOfGameRecursive(table,arr,i,j):
 
     (table[i])[j] = max(arr[i] + min(x,y), arr[j] + min(y,z))
     return (table[i])[j]
-# Driver Code
-import time
 
-arr1 = [8, 15, 3, 7]
+def llamada_tiempo(fichero,ft):
+    iteraciones = 0
+    for linea in open(fichero, "r"):
+        iteraciones = iteraciones + 1
+        print("################ " +
+              str(iteraciones) +
+              " iteracion ##############")
+        arr = []
+        for palabra in linea.split():
+            arr.append(int(palabra))
+            # Definicón del diccionario
+        table = {}
+        for i in range(len(arr)):
+            # creación par(clave(número entero),valor(lista))
+            table[i] = []
+            for j in range(len(arr)):
+                # asignación para la lista
+                table[i].append(0)
+        st = time.time()
+        print(optimalStrategyOfGameRecursive(table, arr, 0, len(arr) - 1))
+        medida = st - time.time()
+        ft.write(str(medida) + "segundos\n")
+        print("tiempo: " + str(medida))
 
-arr2 = [2, 2, 2, 2]
-#Definicón del diccionario
-table = {}
-for i in range(len(arr1)):
-    #creación par(clave(número entero),valor(lista))
-    table[i] = []
-    for j in range(len(arr1)):
-        #asignación para la lista
-        table[i].append(0)
-st = time.time()
-print(optimalStrategyOfGameRecursive(table, arr1, 0, len(arr1)-1))
-print("tiempo 1: "  + str(st - time.time()))
-st = time.time()
-print(optimalStrategyOfGameRecursive(table, arr2, 0, len(arr2)-1))
-print("tiempo 2: " + str(st - time.time()))
 
-arr3 = [20, 30, 2, 2, 2, 10]
+    # Tabla comparativa de tiempos(versión primitiva)
+    """
+    elementos | iterativo(tabla) s | recursivo(memorization) s
+    100         0.03                0.0279
+    250         0.186               0.318
+    400         0.5                 0.58
+    550         1.02                1.009
+    700         1.66                1.09
+    850         2.41                1.64
+    1000        3.17                3.39
+    """
+def llamada_funcinamiento(fichero):
+    iteraciones = 0
+    for linea in open(fichero, "r"):
+        iteraciones = iteraciones + 1
+        print("################ " +
+              str(iteraciones) +
+              " iteracion ##############")
+        arr = []
+        for palabra in linea.split():
+            arr.append(int(palabra))
+            # Definicón del diccionario
+        table = {}
+        for i in range(len(arr)):
+            # creación par(clave(número entero),valor(lista))
+            table[i] = []
+            for j in range(len(arr)):
+                # asignación para la lista
+                table[i].append(0)
+        print("Para" + str(arr))
+        print(optimalStrategyOfGameRecursive(table, arr, 0, len(arr) - 1))
 
-table = {}
-for i in range(len(arr3)):
-    #creación par(clave(número entero),valor(lista))
-    table[i] = []
-    for j in range(len(arr3)):
-        #asignación para la lista
-        table[i].append(0)
-st = time.time()
-print(optimalStrategyOfGameRecursive(table, arr3, 0, len(arr3)-1))
-print("tiempo 3: " + str(st - time.time()))
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "-t":
+            for i in range(2, len(sys.argv)):
+                print("------------------------------------------------------- "
+                      + str(i - 1) +
+                      "Fichero -------------------------------------------------------------------------------------------")
+                ft = open("tiempos.txt", "w+")
+                ft.write("##### TIEMPOS " +  str(sys.argv[i]) + " ####\n")
+                llamada_tiempo(sys.argv[i], ft)
+                ft.close()
+        else:
+            for i in range(1, len(sys.argv)):
+                print("------------------------------------------------------- "
+                      + str(i) +
+                      "Fichero -------------------------------------------------------------------------------------------")
+                llamada_funcinamiento(sys.argv[i])
+    else:
+        print("FALLO EN EL ARGUMENTO")
+        exit(1)
 
-arr4 = []
-import random
-for i in range(1,400):arr4.append(random.randint(1,101))
-#2000 --> 4GB sobrecarga memeoria
-
-table = {}
-for i in range(len(arr4)):
-    #creación par(clave(número entero),valor(lista))
-    table[i] = []
-    for j in range(len(arr4)):
-        #asignación para la lista
-        table[i].append(0)
-st = time.time()
-print(optimalStrategyOfGameRecursive(table, arr4, 0, len(arr4)-1))
-print("tiempo 4: " + str(st - time.time()))
-
-#Tabla comparativa de tiempos(versión primitiva)
-"""
-elementos | iterativo(tabla) s | recursivo(memorization) s
-100         0.03                0.0279
-250         0.186               0.318
-400         0.5                 0.58
-550         1.02                1.009
-700         1.66                1.09
-850         2.41                1.64
-1000        3.17                3.39
-"""
