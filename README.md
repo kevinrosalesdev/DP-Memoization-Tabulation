@@ -1,7 +1,8 @@
 # DP-PR3
-## Optimal Strategy for a Game using Dynamic Programming using three Languages: Python, Java &amp; R[RStudio]!
+## Optimal Strategy for a Game using Dynamic Programming with two Languages: Python & C++!
+## This repository contains an improvement to Cannibals and Missionaries algorithm using Backtracking iterator in Java!
 
-### These strategies can show its time too!
+### These strategies can show their time too!
 
 ### -> [Problema a Resolver](https://www.geeksforgeeks.org/optimal-strategy-for-a-game-dp-31/)
 
@@ -14,12 +15,15 @@
 ### Informe
 >Disponible en Google Drive
 
-### Lenguajes:
-* Java
+### Lenguajes [Memoization]:
 * Python
-* R (Temporalmente)
+* C++
+
+### Lenguaje [Backtracking CyM]:
+* Java
 
 ### Propuesta Temporal:
 * 29/11: Clase Práctica 1
+* 7/12: Python 100%. C++ casi completado. Iterador 100% implementado en Java **sin** aprovechar sus características aún.
 * 13/12: Clase Práctica 2
 * 14/12: Entrega del Trabajo
