@@ -46,7 +46,7 @@ def llamada_tiempo(fichero,ft):
         arr = []
         for palabra in linea.split():
             arr.append(int(palabra))
-            # Definicón del diccionario
+            # Definición del diccionario
         table = {}
         for i in range(len(arr)):
             # creación par(clave(número entero),valor(lista))
@@ -76,7 +76,7 @@ def llamada_tiempo_tabulation(fichero,ft):
         ft.write(str(len(arr)) + "--" + str(medida) + "\n")
         print("tiempo: " + str(medida))
 
-def llamada_funcinamiento_tabulation(fichero):
+def llamada_funcionamiento_tabulation(fichero):
     iteraciones = 0
     for linea in open(fichero, "r"):
         iteraciones = iteraciones + 1
@@ -88,7 +88,7 @@ def llamada_funcinamiento_tabulation(fichero):
         print("Para" + str(arr))
         print(optimalStrategyOfGameTabulation(arr,len(arr)))
 
-def llamada_funcinamiento(fichero):
+def llamada_funcionamiento(fichero):
     iteraciones = 0
     for linea in open(fichero, "r"):
         iteraciones = iteraciones + 1
@@ -98,7 +98,7 @@ def llamada_funcinamiento(fichero):
         arr = []
         for palabra in linea.split():
             arr.append(int(palabra))
-            # Definicón del diccionario
+            # Definición del diccionario
         table = {}
         for i in range(len(arr)):
             # creación par(clave(número entero),valor(lista))
@@ -137,9 +137,9 @@ if __name__ == '__main__':
                       + str(i) +
                       "Fichero -------------------------------------------------------------------------------------------")
                 print("Algoritmo por Memoritation")              
-                llamada_funcinamiento(sys.argv[i])
+                llamada_funcionamiento(sys.argv[i])
                 print("\nAlgoritmo por Tabulation")
-                llamada_funcinamiento_tabulation(sys.argv[i])
+                llamada_funcionamiento_tabulation(sys.argv[i])
     else:
         print("FALLO EN EL ARGUMENTO")
         exit(1)
