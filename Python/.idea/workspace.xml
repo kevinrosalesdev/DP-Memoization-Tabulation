@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95615916-ecc6-4dde-8738-a7eae99a2a4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/generadorDeficheros.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DP-PR3.py" beforeDir="false" afterPath="$PROJECT_DIR$/DP-PR3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSol-PR3.py" beforeDir="false" afterPath="$PROJECT_DIR$/generadorDeficheros.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiempos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tiempos.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,23 +47,25 @@
     <session id="-1078953853">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="20" />
-          <entry key="py" value="1037" />
+          <entry key="py" value="1123" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="20" />
-          <entry key="Python" value="1037" />
+          <entry key="Python" value="1123" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -83,11 +85,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DP-PR3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="361">
+              <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
               <folding>
                 <element signature="e#22#32#0" expanded="true" />
-                <marker date="1543607290720" expanded="true" signature="539:2537" ph="..." />
+                <marker date="1543866693634" expanded="true" signature="1126:3438" ph="..." />
               </folding>
             </state>
           </provider>
@@ -96,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generadorDeficheros.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="102">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <element signature="e#22#32#0" expanded="true" />
               </folding>
@@ -122,8 +124,8 @@
       <list>
         <option value="$PROJECT_DIR$/DPSol-PR3.py" />
         <option value="$PROJECT_DIR$/generadorDeficheros.py" />
-        <option value="$PROJECT_DIR$/DP-PR3.py" />
         <option value="$PROJECT_DIR$/GeneradorGráficas.py" />
+        <option value="$PROJECT_DIR$/DP-PR3.py" />
       </list>
     </option>
   </component>
@@ -133,6 +135,23 @@
     <option name="width" value="1026" />
     <option name="height" value="576" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>General</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -141,7 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,10 +171,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -170,7 +189,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GeneradorGráficas">
+  <component name="RunManager" selected="Python.DP-PR3">
     <configuration name="DP-PR3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -241,9 +260,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DP-PR3" />
         <item itemvalue="Python.GeneradorGráficas" />
         <item itemvalue="Python.generadorDeficheros" />
-        <item itemvalue="Python.DP-PR3" />
       </list>
     </recent_temporary>
   </component>
@@ -269,7 +288,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49925596" visible="true" weight="0.22950819" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925596" weight="0.22950819" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -287,26 +306,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/generadorDeficheros.py">
+    <entry file="file://$PROJECT_DIR$/GeneradorGráficas.py" />
+    <entry file="file://$PROJECT_DIR$/DP-PR3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="361">
+          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
           <folding>
             <element signature="e#22#32#0" expanded="true" />
+            <marker date="1543866693634" expanded="true" signature="1126:3438" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GeneradorGráficas.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DP-PR3.py">
+    <entry file="file://$PROJECT_DIR$/generadorDeficheros.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        <state relative-caret-position="102">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="e#22#32#0" expanded="true" />
-            <marker date="1543607290720" expanded="true" signature="539:2537" ph="..." />
           </folding>
         </state>
       </provider>
