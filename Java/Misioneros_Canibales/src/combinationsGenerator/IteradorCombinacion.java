@@ -83,9 +83,14 @@ public class IteradorCombinacion implements Iterable<List<String>> {
                         result[curIndex] = arrayList[indices[curIndex]];
                         if(!Utility.available(result)){
                             result[curIndex]="";
-                            curIndex--;
+                            if (curIndex < indices.length -1){
+                                curIndex--;
+                            }else{
+                                
+                            }
                             continue;
                         }
+
                     if (curIndex < indices.length - 1) {
                         curIndex++;
                     } else {
