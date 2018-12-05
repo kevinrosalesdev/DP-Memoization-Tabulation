@@ -12,7 +12,7 @@ package combinationsGenerator;
 public class Utility {
     public static boolean available(String [] a){
         for (String i : a) {
-            if (i.equals("0")) {
+            if (i.equals("1")) {
                 return false;
             }
         }
