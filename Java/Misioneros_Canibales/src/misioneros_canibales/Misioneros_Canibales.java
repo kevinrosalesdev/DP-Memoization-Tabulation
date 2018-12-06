@@ -20,7 +20,7 @@ public class Misioneros_Canibales {
      * @param args Argumentos que se pasan al ejecutable
      */
     public static void main(String[] args) {
-        /**
+        
         List <String> argumentos= new LinkedList();
         
         for(int i =0; i< args.length;i++){
@@ -39,7 +39,8 @@ public class Misioneros_Canibales {
             aux= iterador.next();
             prueba.misioneros_Canibales(aux, flag);
         }
-        */
+        
+        /*
         List <String> algo= new LinkedList();
         for (int i = 0; i < 6; i++) {
             algo.add(""+i);
@@ -48,6 +49,7 @@ public class Misioneros_Canibales {
         for (List<String> list : iterador) {
             System.out.println(list);
         }
+*/
     }
     
 }

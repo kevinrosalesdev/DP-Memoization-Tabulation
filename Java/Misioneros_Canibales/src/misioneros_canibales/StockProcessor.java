@@ -119,8 +119,9 @@ public class StockProcessor {
                         auxB.add(auxTi);
                     }
                     //Evalua si es una combinación aceptable
+                    System.out.println(t);
                     if ((numero_misioneros(t)>numero_canibales(t) || numero_misioneros(t)==0)
-                            && numero_misioneros(auxA)!=1
+                            && numero_misioneros(auxA)!=1 
                             && (numero_canibales(auxA)<= numero_misioneros(auxA) || numero_misioneros(auxA)==0)
                             && (numero_canibales(auxB) <= numero_misioneros(auxB))){
                         if (!timeFlag){

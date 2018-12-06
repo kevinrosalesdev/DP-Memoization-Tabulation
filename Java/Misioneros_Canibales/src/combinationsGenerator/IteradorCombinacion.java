@@ -44,7 +44,7 @@ public class IteradorCombinacion implements Iterable<List<String>> {
         private int[] indices;
         private final String[] arrayList;
         private List<String> elem = null;
-        
+        private Utility comprobador = new Utility();
         /**
          * Constructor del iterador de combinaciones
          * @param s Lista en la cual estan los elementos para combinar
@@ -81,7 +81,7 @@ public class IteradorCombinacion implements Iterable<List<String>> {
                     curIndex--;
                 } else {
                         result[curIndex] = arrayList[indices[curIndex]];
-                        if(!Utility.available(result)){
+                        if(!comprobador.available(result)){
                             result[curIndex]="";
                             if (curIndex < indices.length -1 && indices[curIndex] == (curIndex == 0 ? arrayList.length:indices [curIndex-1] ) ){
                                 indices[curIndex] = indices.length-curIndex - 2;
