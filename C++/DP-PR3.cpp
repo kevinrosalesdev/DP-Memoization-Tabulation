@@ -3,8 +3,30 @@
 
 using namespace std;
 
-int optimalStrategyOfGameMemoization(int* table, int arr[], int i, int j){
-    return 0;
+int optimalStrategyOfGameMemoization(int *table, int n, int arr[], int i, int j){
+    int x, y, z;
+    if(i == j){
+        return arr[i];
+    }
+    if((i+2) <= j){
+        x = optimalStrategyOfGameMemoization(table, n, arr, i+2, j);
+    } else{
+        x = 0;
+    }
+    if((i+1) <= (j-1)){
+        y = optimalStrategyOfGameMemoization(table, n, arr, i+1, j-1);
+    } else{
+        y = 0;
+    }
+    if(i <= (j-2)){
+        z = optimalStrategyOfGameMemoization(table, n, arr, i, j-2);
+    } else{
+        z = 0;
+    }
+    table[i*n+j] = max(arr[i] + min(x,y), arr[j] + min(y,z));
+    return table[i*n+j];
+
+
 }
 
 int optimalStrategyOfGameTabulation(int* arr, int n){
@@ -48,16 +70,28 @@ void llamada_funcionamiento_tabulation(string fichero){
 
 int main() {
     int arr1[] = { 8, 15, 3, 7 };
+
     int n = sizeof(arr1) / sizeof(arr1[0]);
-    printf("%d\n", optimalStrategyOfGameTabulation(arr1, n));
+    printf("Tabulacion: %d ", optimalStrategyOfGameTabulation(arr1, n));
+
+    int table0[4][4] = {0};
+    printf("Memoization: %d\n", optimalStrategyOfGameMemoization((int *)table0, n, arr1, 0, n-1));
 
     int arr2[] = { 2, 2, 2, 2 };
+
     n = sizeof(arr2) / sizeof(arr2[0]);
-    printf("%d\n", optimalStrategyOfGameTabulation(arr2, n));
+    printf("Tabulacion: %d ", optimalStrategyOfGameTabulation(arr2, n));
+
+    int table1[4][4] = {0};
+    printf("Memoization: %d\n", optimalStrategyOfGameMemoization((int *)table1, n, arr2, 0, n-1));
 
     int arr3[] = { 20, 30, 2, 2, 2, 10 };
+
     n = sizeof(arr3) / sizeof(arr3[0]);
-    printf("%d\n", optimalStrategyOfGameTabulation(arr3, n));
+    printf("Tabulacion: %d ", optimalStrategyOfGameTabulation(arr3, n));
+
+    int table2[6][6] = {0};
+    printf("Memoization: %d\n", optimalStrategyOfGameMemoization((int *)table2, n, arr3, 0, n-1));
 
     return 0;
 }
