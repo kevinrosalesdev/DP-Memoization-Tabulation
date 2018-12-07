@@ -5,6 +5,9 @@
  */
 package combinationsGenerator;
 
+
+import java.util.List;
+
 /**
  *
  * @author Hector
@@ -16,6 +19,17 @@ public class Utility {
     private int caníablesOrB=0;
     private int misionerosOrA=0;
     private int caníablesOrA=0;
+    
+    public Utility(List <String> list){
+        for (String string : list) {
+            if (string.equals("1")){
+                misionerosOrA++;
+            }else{
+                caníablesOrA++;
+            }
+        }
+    
+    }
     
     public  boolean available(String [] a){
         int m=0;
@@ -34,14 +48,31 @@ public class Utility {
                     break;
             }
         }
-        System.out.println("misioneros"+m+"canibales"+c+"ninguno"+nin);
+        //System.out.println("misioneros "+m+" canibales "+c+" ninguno "+nin);
+        
         switch(nin){
             case 1:
+                /**
+                if ((misionerosOrB+m >= caníablesOrB+c )
+                      && (misionerosOrA-m >=caníablesOrA-c || misionerosOrA-m ==0)){
+                    return true;
+                }
                 break;
-            case 2: 
-                break;
+                */
+                return true; 
+            case 2:
+                /**
+                if ((misionerosOrB+m >= caníablesOrB+c )
+                      && (misionerosOrA-m >=caníablesOrA-c || misionerosOrA-m ==0) ){
+                    return true;
+                }
+                */
+                //break;
+                
+                return true;
             default:
-                if ((misionerosOrA>caníablesOrA || misionerosOrA==0)
+                
+                if ((misionerosOrA-m>caníablesOrA-c || misionerosOrA-m==0)
                     && misionerosOrA-m!=1
                     && (caníablesOrA-c<= misionerosOrA-m || misionerosOrA-m ==0)
                     && (caníablesOrB+c <= misionerosOrB+m)){
@@ -51,9 +82,14 @@ public class Utility {
                     caníablesOrA-=c;
                     return true;
                     }
+                  
                 break;
+                
+                
             }
-        return false;
+        
+    
+        return true;
     }
         
         

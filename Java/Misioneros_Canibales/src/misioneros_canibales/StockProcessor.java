@@ -102,6 +102,7 @@ public class StockProcessor {
                     System.out.println("ORILLA_A -->"+orillaA.size());
                     System.out.println("ORILLA_B -->"+orillaB.size());
                 }
+                //System.out.println(orillaA);
                 IteradorCombinacion it = new IteradorCombinacion(orillaA, 3);
                 Iterator s = it.iterator();
                 /**
@@ -146,6 +147,7 @@ public class StockProcessor {
                         System.out.println("Combinación imposible");
                         flag=false;
                         break;
+                        
                     }
                 
             }

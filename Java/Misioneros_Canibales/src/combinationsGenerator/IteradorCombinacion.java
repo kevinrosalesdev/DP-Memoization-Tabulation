@@ -44,7 +44,7 @@ public class IteradorCombinacion implements Iterable<List<String>> {
         private int[] indices;
         private final String[] arrayList;
         private List<String> elem = null;
-        private Utility comprobador = new Utility();
+        private Utility comprobador = new Utility(list);
         /**
          * Constructor del iterador de combinaciones
          * @param s Lista en la cual estan los elementos para combinar
