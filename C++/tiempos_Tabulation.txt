@@ -1,0 +1,18 @@
+#### TIEMPOS fichero_medio.txt ####
+Tamaño: 2 -- 0.001 segundos
+Tamaño: 4 -- 0.001 segundos
+Tamaño: 6 -- 0.002 segundos
+Tamaño: 8 -- 0.001 segundos
+Tamaño: 10 -- 0.001 segundos
+Tamaño: 12 -- 0.001 segundos
+Tamaño: 14 -- 0 segundos
+Tamaño: 16 -- 0.003 segundos
+Tamaño: 18 -- 0.001 segundos
+Tamaño: 20 -- 0.001 segundos
+Tamaño: 22 -- 0 segundos
+Tamaño: 24 -- 0.001 segundos
+Tamaño: 26 -- 0.001 segundos
+Tamaño: 28 -- 0.001 segundos
+Tamaño: 30 -- 0.001 segundos
+Tamaño: 32 -- 0 segundos
+Tamaño: 34 -- 0 segundos

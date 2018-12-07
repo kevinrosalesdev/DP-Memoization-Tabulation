@@ -136,7 +136,7 @@ if __name__ == '__main__':
                 print("------------------------------------------------------- "
                       + str(i) +
                       "Fichero -------------------------------------------------------------------------------------------")
-                print("Algoritmo por Memoritation")              
+                print("Algoritmo por Memoization")
                 llamada_funcionamiento_memoization(sys.argv[i])
                 print("\nAlgoritmo por Tabulation")
                 llamada_funcionamiento_tabulation(sys.argv[i])

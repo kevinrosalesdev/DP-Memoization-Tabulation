@@ -12,7 +12,31 @@
 
 ### -> [Características del Trabajo](https://cv-aep.ulpgc.es/cv/ulpgctp19/pluginfile.php/177244/mod_resource/content/4/Laboratorio-3.pdf)
 
+### Comandos para hacerlos funcionar
+
+###### Evidentemente, es necesario tener java, python y gcc en el Path del SO.
+
+* Java
+
+  ~~~java
+  java -jar Misioneros_Canibales.jar [-t] [Rutas Relativas de los Ficheros]
+  ~~~
+
+* Python
+
+  ~~~python
+  python DP-PR3.py [-t/-T] [Rutas Relativas de los Ficheros]
+  ~~~
+
+* C++ (Compilándolo con GCC)
+
+  ~~~c++
+  g++ DP-PR3.cpp -o "Nombre del Ejecutable"
+  "Nombre del Ejecutable" [-t/-T] [Rutas Relativas de los Ficheros]
+  ~~~
+
 ### Informe
+
 >Disponible en Google Drive
 
 ### Lenguajes [Memoization]:
