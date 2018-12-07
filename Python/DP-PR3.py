@@ -3,17 +3,23 @@ import sys
 import time
 
 
-def optimalStrategyOfGameMemoization(table,arr,i,j):
-    if(i == j):
-        return arr[i]
-    if((i+2) <= j): x = optimalStrategyOfGameMemoization(table, arr, i+2, j)
-    else: x = 0
-    if ((i + 1) <= j-1): y = optimalStrategyOfGameMemoization(table, arr, i + 1, j-1)
-    else: y = 0
-    if (i <= (j-2)): z = optimalStrategyOfGameMemoization(table, arr, i, j-2)
-    else: z = 0
-
-    (table[i])[j] = max(arr[i] + min(x,y), arr[j] + min(y,z))
+def optimalStrategyOfGameMemoization(table,arr, i, j):
+    if not (table[i])[j] != 0:
+        if i == j:
+            return arr[i]
+        if (i + 2) <= j:
+            x = optimalStrategyOfGameMemoization(table,arr, i + 2, j)
+        else:
+            x = 0
+        if (i + 1) <= j - 1:
+            y = optimalStrategyOfGameMemoization(table,arr, i + 1, j - 1)
+        else:
+            y = 0
+        if i <= (j - 2):
+            z = optimalStrategyOfGameMemoization(table,arr, i, j - 2)
+        else:
+            z = 0
+        (table[i])[j] = max(arr[i] + min(x, y), arr[j] + min(y, z))
     return (table[i])[j]
 
 
@@ -36,7 +42,8 @@ def optimalStrategyOfGameTabulation(arr, n):
                               arr[j] + min(y, z))
     return table[0][n - 1]
 
-def llamada_tiempo_memoization(fichero,ft):
+
+def llamada_tiempo_memoization(fichero, ft):
     iteraciones = 0
     for linea in open(fichero, "r"):
         iteraciones = iteraciones + 1
@@ -60,7 +67,8 @@ def llamada_tiempo_memoization(fichero,ft):
         ft.write(str(len(arr)) + "--" + str(medida) + "\n")
         print("tiempo: " + str(medida))
 
-def llamada_tiempo_tabulation(fichero,ft):
+
+def llamada_tiempo_tabulation(fichero, ft):
     iteraciones = 0
     for linea in open(fichero, "r"):
         iteraciones = iteraciones + 1
@@ -71,10 +79,11 @@ def llamada_tiempo_tabulation(fichero,ft):
         for palabra in linea.split():
             arr.append(int(palabra))
         st = time.time()
-        print(optimalStrategyOfGameTabulation(arr,len(arr)))
+        print(optimalStrategyOfGameTabulation(arr, len(arr)))
         medida = time.time() - st
         ft.write(str(len(arr)) + "--" + str(medida) + "\n")
         print("tiempo: " + str(medida))
+
 
 def llamada_funcionamiento_tabulation(fichero):
     iteraciones = 0
@@ -84,9 +93,10 @@ def llamada_funcionamiento_tabulation(fichero):
               str(iteraciones) +
               " iteracion ##############")
         arr = []
-        for palabra in linea.split():arr.append(int(palabra))
+        for palabra in linea.split(): arr.append(int(palabra))
         print("Para" + str(arr))
-        print(optimalStrategyOfGameTabulation(arr,len(arr)))
+        print(optimalStrategyOfGameTabulation(arr, len(arr)))
+
 
 def llamada_funcionamiento_memoization(fichero):
     iteraciones = 0
@@ -110,7 +120,6 @@ def llamada_funcionamiento_memoization(fichero):
         print(optimalStrategyOfGameMemoization(table, arr, 0, len(arr) - 1))
 
 
-
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         if sys.argv[1] == "-t":
@@ -119,7 +128,7 @@ if __name__ == '__main__':
                       + str(i - 1) +
                       "Fichero -------------------------------------------------------------------------------------------")
                 ft = open("tiempos_Memoization.txt", "w+")
-                ft.write("##### TIEMPOS " +  str(sys.argv[i]) + " ####\n")
+                ft.write("##### TIEMPOS " + str(sys.argv[i]) + " ####\n")
                 llamada_tiempo_memoization(sys.argv[i], ft)
                 ft.close()
         elif sys.argv[1] == "-T":
@@ -128,7 +137,7 @@ if __name__ == '__main__':
                       + str(i - 1) +
                       "Fichero -------------------------------------------------------------------------------------------")
                 ft = open("tiempos_Tabulation.txt", "w+")
-                ft.write("##### TIEMPOS " +  str(sys.argv[i]) + " ####\n")
+                ft.write("##### TIEMPOS " + str(sys.argv[i]) + " ####\n")
                 llamada_tiempo_tabulation(sys.argv[i], ft)
                 ft.close()
         else:
@@ -143,4 +152,3 @@ if __name__ == '__main__':
     else:
         print("FALLO EN EL ARGUMENTO")
         exit(1)
-
