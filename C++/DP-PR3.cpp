@@ -14,7 +14,7 @@
  * @param j posición
  * @return mapa con key 'i*n+j'
  */
-int optimalStrategyOfGameMemoization(unordered_map<int, int> map, int n, int arr[], int i, int j){
+int optimalStrategyOfGameMemoization(unordered_map<int, int>& map, int n, int arr[], int i, int j){
     int valor = i*n+j;
     if(map.find(valor) == map.end()){
         int x, y, z;

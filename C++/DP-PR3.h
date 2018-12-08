@@ -13,7 +13,7 @@
 
 using namespace std;
 
-int optimalStrategyOfGameMemoization(unordered_map<int, int> map, int n, int arr[], int i, int j);
+int optimalStrategyOfGameMemoization(unordered_map<int, int>& map, int n, int arr[], int i, int j);
 
 int optimalStrategyOfGameTabulation(int* arr, int n);
 
