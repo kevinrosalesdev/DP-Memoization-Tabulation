@@ -2,6 +2,7 @@
 package misioneros_canibales;
 
 import combinationsGenerator.IteradorCombinacion;
+import combinationsGenerator.IteratorMi;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,6 +23,7 @@ public class Misioneros_Canibales {
     public static void main(String[] args) {
         
         List <String> argumentos= new LinkedList();
+        
         
         for(int i =0; i< args.length;i++){
             argumentos.add(args[i]);
@@ -50,6 +52,23 @@ public class Misioneros_Canibales {
             System.out.println(list);
         }
 */
+        /*
+        List <String> argumentos= new LinkedList();
+        argumentos.add("1");
+        argumentos.add("1");
+        argumentos.add("2");
+        argumentos.add("2");
+        argumentos.add("1");
+        argumentos.add("1");
+        
+        IteratorMi algo= new IteratorMi(argumentos);
+        for (List<String> list : algo) {
+            System.out.println(list);
+        }
+        /*
+        StockProcessor prueba= new StockProcessor();
+        prueba.misioneros_Canibales("fichero10_1.txt", false);
+        */
     }
     
 }

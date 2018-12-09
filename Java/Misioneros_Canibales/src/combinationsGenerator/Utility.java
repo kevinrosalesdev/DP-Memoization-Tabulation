@@ -31,7 +31,7 @@ public class Utility {
     
     }
     
-    public  boolean available(String [] a){
+    public  boolean available(List <String>  a){
         int m=0;
         int c=0;
         int nin=0;
@@ -48,10 +48,22 @@ public class Utility {
                     break;
             }
         }
+        /*
+        if(misionerosOrA-m<0 ||caníablesOrA-c<0){
+            return false;
+        }
+        */
         //System.out.println("misioneros "+m+" canibales "+c+" ninguno "+nin);
         
         switch(nin){
             case 1:
+                /*
+                if((c==2 &&caníablesOrA-c==0)
+                        || (misionerosOrA-m< caníablesOrA-c-1)
+                        || (c==1 && m==1 && misionerosOrA-m==0)
+                        ){
+                    return false;
+                }
                 /**
                 if ((misionerosOrB+m >= caníablesOrB+c )
                       && (misionerosOrA-m >=caníablesOrA-c || misionerosOrA-m ==0)){
@@ -61,6 +73,13 @@ public class Utility {
                 */
                 return true; 
             case 2:
+                /*
+                if((m==1 && misionerosOrA-m==0) 
+                        || (c==1 && misionerosOrA-m==1)
+                        || ((misionerosOrA< caníablesOrA-2)&&(misionerosOrA!=0))
+                        || (misionerosOrB+2<c)){
+                    return false;
+                }
                 /**
                 if ((misionerosOrB+m >= caníablesOrB+c )
                       && (misionerosOrA-m >=caníablesOrA-c || misionerosOrA-m ==0) ){
@@ -71,7 +90,7 @@ public class Utility {
                 
                 return true;
             default:
-                
+                /*
                 if ((misionerosOrA-m>caníablesOrA-c || misionerosOrA-m==0)
                     && misionerosOrA-m!=1
                     && (caníablesOrA-c<= misionerosOrA-m || misionerosOrA-m ==0)
@@ -82,14 +101,14 @@ public class Utility {
                     caníablesOrA-=c;
                     return true;
                     }
-                  
-                break;
+_*/
+                return true;
                 
                 
             }
         
     
-        return true;
+        //return true;
     }
         
         

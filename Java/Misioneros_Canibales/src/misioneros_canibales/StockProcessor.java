@@ -3,6 +3,7 @@ package misioneros_canibales;
 
 import Reader.FileTextReader;
 import combinationsGenerator.IteradorCombinacion;
+import combinationsGenerator.IteratorMi;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -103,52 +104,68 @@ public class StockProcessor {
                     System.out.println("ORILLA_B -->"+orillaB.size());
                 }
                 //System.out.println(orillaA);
-                IteradorCombinacion it = new IteradorCombinacion(orillaA, 3);
-                Iterator s = it.iterator();
+                //IteratorMi it = new IteratorMi(orillaA);
+                //Iterator s = it.iterator();
                 /**
                  * Añade a una copia de las orillas para comprobar que la
                  * combinación es aceptable para resolver el problema
                  */ 
-                while (s.hasNext()) {
-                    List t= (List) s.next();
-                    List<String> auxA= clone(orillaA);
-                    List<String> auxB= clone(orillaB);
-                    Iterator ti= t.iterator();
-                    while(ti.hasNext()){
-                        String auxTi= (String) ti.next();
-                        auxA.remove(auxTi);
-                        auxB.add(auxTi);
+                boolean flagW=true;
+                while(flagW ){
+                    IteratorMi it = new IteratorMi(orillaA);
+                    Iterator s = it.iterator();
+                    sizeFlag=orillaA.size();
+                    while (s.hasNext()) {
+                        
+                        List t= (List) s.next();
+                        if(s==null || orillaA.size()==0){
+                            flagW=false;
+                            break;
+                        }
+                        List<String> auxA= clone(orillaA);
+                        List<String> auxB= clone(orillaB);
+                        Iterator ti= t.iterator();
+                        while(ti.hasNext()){
+                            String auxTi= (String) ti.next();
+                            auxA.remove(auxTi);
+                            auxB.add(auxTi);
+                        }
+                        //Evalua si es una combinación aceptable
+                        //System.out.println(t);
+                        if ((numero_misioneros(t)>numero_canibales(t) || numero_misioneros(t)==0)
+                                && numero_misioneros(auxA)!=1 
+                                && (numero_canibales(auxA)<= numero_misioneros(auxA) || numero_misioneros(auxA)==0)
+                                && (numero_canibales(auxB) <= numero_misioneros(auxB))){
+                            if (!timeFlag){
+                                System.out.println("Combinacion ganadoras:"+ t);
+                            }
+                            Iterator ti2= t.iterator();
+                            //Efectua el cambio teniendo ya la combinación aceptable
+                            while(ti2.hasNext()){
+                                String auxTi2=  (String) ti2.next();
+                                orillaA.remove(auxTi2);
+                                orillaB.add(auxTi2);
+                            }
+                            //System.out.println(orillaA);
+                            //System.out.println("Combinacion buena");
+                            //break;
+                        }
                     }
-                    //Evalua si es una combinación aceptable
-                    System.out.println(t);
-                    if ((numero_misioneros(t)>numero_canibales(t) || numero_misioneros(t)==0)
-                            && numero_misioneros(auxA)!=1 
-                            && (numero_canibales(auxA)<= numero_misioneros(auxA) || numero_misioneros(auxA)==0)
-                            && (numero_canibales(auxB) <= numero_misioneros(auxB))){
-                        if (!timeFlag){
-                            System.out.println("Combinacion ganadoras:"+ t);
-                        }
-                        Iterator ti2= t.iterator();
-                        //Efectua el cambio teniendo ya la combinación aceptable
-                        while(ti2.hasNext()){
-                            String auxTi2=  (String) ti2.next();
-                            orillaA.remove(auxTi2);
-                            orillaB.add(auxTi2);
-                        }
+                    if (orillaA.size()==sizeFlag){
+                        System.out.println("Combinación imposible");
+                        flag=false;
+                        flagW=false;
                         break;
+                        
                     }
                 }
+                break;
                 /**
                  * Si se han iterado todas las combinaciones posibles y ninguna
                  * es aceptable es imposible de realizar la operación
                  */
             
-                if (orillaA.size()==sizeFlag){
-                        System.out.println("Combinación imposible");
-                        flag=false;
-                        break;
-                        
-                    }
+                
                 
             }
             if (flag){

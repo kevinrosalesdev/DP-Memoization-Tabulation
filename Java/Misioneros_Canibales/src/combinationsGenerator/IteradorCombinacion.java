@@ -80,15 +80,17 @@ public class IteradorCombinacion implements Iterable<List<String>> {
                     indices[curIndex] = indices.length-curIndex - 2;
                     curIndex--;
                 } else {
-                        result[curIndex] = arrayList[indices[curIndex]];
-                        if(!comprobador.available(result)){
-                            result[curIndex]="";
-                            if (curIndex < indices.length -1 && indices[curIndex] == (curIndex == 0 ? arrayList.length:indices [curIndex-1] ) ){
-                                indices[curIndex] = indices.length-curIndex - 2;
-                                curIndex--;
-                            }
+                    result[curIndex] = arrayList[indices[curIndex]];
+                    /*
+                    if(!comprobador.available(result)){
+                        result[curIndex]="";
+                        if (curIndex < indices.length -1 && indices[curIndex] == (curIndex == 0 ? arrayList.length:indices [curIndex-1] ) ){
+                            indices[curIndex] = indices.length-curIndex - 2;
+                            curIndex--;
+                        }
                         continue;
                     }
+                    */
                     if (curIndex < indices.length - 1) {
                         curIndex++;
                     } else {
