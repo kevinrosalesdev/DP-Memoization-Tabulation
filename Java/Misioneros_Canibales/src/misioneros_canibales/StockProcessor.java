@@ -133,6 +133,7 @@ public class StockProcessor {
                         //Evalua si es una combinación aceptable
                         //System.out.println(t);
                         if ((numero_misioneros(t)>numero_canibales(t) || numero_misioneros(t)==0)
+                                &&(numero_misioneros(t)<=numero_misioneros(orillaA) && numero_canibales(t)<=numero_canibales(orillaA))
                                 && numero_misioneros(auxA)!=1 
                                 && (numero_canibales(auxA)<= numero_misioneros(auxA) || numero_misioneros(auxA)==0)
                                 && (numero_canibales(auxB) <= numero_misioneros(auxB))){
@@ -141,15 +142,21 @@ public class StockProcessor {
                             }
                             Iterator ti2= t.iterator();
                             //Efectua el cambio teniendo ya la combinación aceptable
+                            //System.out.println( "barca "+t);
                             while(ti2.hasNext()){
                                 String auxTi2=  (String) ti2.next();
                                 orillaA.remove(auxTi2);
                                 orillaB.add(auxTi2);
                             }
-                            //System.out.println(orillaA);
+                            
+                            //System.out.println("orilla "+orillaA);
+                            
                             //System.out.println("Combinacion buena");
                             //break;
                         }
+                    }
+                    if(!flagW){
+                        break;
                     }
                     if (orillaA.size()==sizeFlag){
                         System.out.println("Combinación imposible");
