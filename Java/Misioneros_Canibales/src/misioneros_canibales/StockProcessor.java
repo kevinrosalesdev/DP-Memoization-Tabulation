@@ -118,7 +118,7 @@ public class StockProcessor {
                     while (s.hasNext()) {
                         
                         List t= (List) s.next();
-                        if(s==null || orillaA.size()==0){
+                        if(s==null || orillaA.size()==0 || t==null){
                             flagW=false;
                             break;
                         }
@@ -131,7 +131,7 @@ public class StockProcessor {
                             auxB.add(auxTi);
                         }
                         //Evalua si es una combinación aceptable
-                        //System.out.println(t);
+                        System.out.println(t);
                         if ((numero_misioneros(t)>numero_canibales(t) || numero_misioneros(t)==0)
                                 &&(numero_misioneros(t)<=numero_misioneros(orillaA) && numero_canibales(t)<=numero_canibales(orillaA))
                                 && numero_misioneros(auxA)!=1 
@@ -148,8 +148,9 @@ public class StockProcessor {
                                 orillaA.remove(auxTi2);
                                 orillaB.add(auxTi2);
                             }
-                            
                             //System.out.println("orilla "+orillaA);
+                            break;
+                            
                             
                             //System.out.println("Combinacion buena");
                             //break;

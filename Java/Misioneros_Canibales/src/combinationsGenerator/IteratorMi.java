@@ -66,6 +66,7 @@ public class IteratorMi implements Iterable<List<String>> {
                 Olist.add("1");
                 //System.out.println("algo1");
                 if(!filtro.available(Olist)){
+                    //System.out.println("filtro");
                     Olist.removeLast();
                     Olist.addLast("2");
                     return next();

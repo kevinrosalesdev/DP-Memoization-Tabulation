@@ -48,6 +48,7 @@ public class Utility {
                     break;
             }
         }
+        nin=3-m-c;
         /*
         if(misionerosOrA-m<0 ||caníablesOrA-c<0){
             return false;
@@ -57,7 +58,12 @@ public class Utility {
         
         switch(nin){
             case 1:
-                /*
+                
+                if ((misionerosOrA<m || caníablesOrA<c) || (misionerosOrA-m<caníablesOrA-c && misionerosOrA-m>1)  ){
+                    System.out.println("filtro 2");
+                    return false;
+                }
+               /*
                 if((c==2 &&caníablesOrA-c==0)
                         || (misionerosOrA-m< caníablesOrA-c-1)
                         || (c==1 && m==1 && misionerosOrA-m==0)
@@ -73,11 +79,8 @@ public class Utility {
                 */
                 return true; 
             case 2:
-                /*
-                if((m==1 && misionerosOrA-m==0) 
-                        || (c==1 && misionerosOrA-m==1)
-                        || ((misionerosOrA< caníablesOrA-2)&&(misionerosOrA!=0))
-                        || (misionerosOrB+2<c)){
+                //System.out.println("misioneros or A"+misionerosOrA);
+                if((misionerosOrA-m<=0 && m==1) || (misionerosOrA-m<caníablesOrA-c && misionerosOrA-m>2)){
                     return false;
                 }
                 /**
@@ -90,18 +93,27 @@ public class Utility {
                 
                 return true;
             default:
-                /*
-                if ((misionerosOrA-m>caníablesOrA-c || misionerosOrA-m==0)
+                if (
+                    
+                    (misionerosOrA-m>caníablesOrA-c || misionerosOrA-m==0)
                     && misionerosOrA-m!=1
                     && (caníablesOrA-c<= misionerosOrA-m || misionerosOrA-m ==0)
-                    && (caníablesOrB+c <= misionerosOrB+m)){
-                    misionerosOrB+=m;
-                    caníablesOrB+=c;
-                    misionerosOrA-=m;
-                    caníablesOrA-=c;
-                    return true;
+                    && (caníablesOrB+c <= misionerosOrB+m)
+                    
+                        
+                        ){
+                    
+                    
+                    
+                        misionerosOrB+=m;
+                        caníablesOrB+=c;
+                        misionerosOrA-=m;
+                        caníablesOrA-=c;
+                        System.out.println("aaaaaaaaaa");
+                        return true;
                     }
-_*/
+                
+
                 return true;
                 
                 
