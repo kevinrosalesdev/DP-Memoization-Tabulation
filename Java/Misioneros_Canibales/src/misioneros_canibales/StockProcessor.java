@@ -8,10 +8,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- *
- * @author Hector
- */
 public class StockProcessor {
     
     
@@ -48,7 +44,6 @@ public class StockProcessor {
         }
         return result;
     }
-    
     /**
      * 
      * Algoritmo de fuerza bruta para calcular el problema de los misioneros
@@ -91,7 +86,6 @@ public class StockProcessor {
             System.out.println("El número de misoneros: " + numero_misioneros(orillaA));
             System.out.println("El número de canibles: " + numero_canibales(orillaA));
             
-
             Iterator p= orillaA.iterator();
             boolean flag= true;
             long tiempoInicio= System.nanoTime();
@@ -111,20 +105,21 @@ public class StockProcessor {
                  * combinación es aceptable para resolver el problema
                  */ 
                 boolean flagW=true;
+                //Bucle para volver a poner a 0 el iterador de combinaciones
                 while(flagW ){
                     IteratorMi it = new IteratorMi(orillaA);
                     Iterator s = it.iterator();
                     sizeFlag=orillaA.size();
+                    //Bucle para iterar entre las combinaciones válidas
                     while (s.hasNext()) {
                         
                         List t= (List) s.next();
-                        if(s==null || orillaA.size()==0 || t==null){
+                        if(s==null || orillaA.isEmpty() || t==null){
                             flagW=false;
                             break;
                         }
                         List<String> auxA= clone(orillaA);
                         List<String> auxB= clone(orillaB);
-                        //System.out.println(t);
                         Iterator ti= t.iterator();
                         while(ti.hasNext()){
                             String auxTi= (String) ti.next();
@@ -148,15 +143,7 @@ public class StockProcessor {
                                 orillaA.remove(auxTi2);
                                 orillaB.add(auxTi2);
                             }
-                            //System.out.println("ORILLA_A -->"+orillaA.size());
-                            //System.out.println("Canibales "+numero_canibales(orillaA)+" misioneros "+numero_misioneros(orillaA));
-                            //System.out.println("ORILLA_B -->"+orillaB.size());
-                            ////System.out.println("Canibales "+numero_canibales(orillaB)+" misioneros "+numero_misioneros(orillaB));
                             break;
-                            
-                            
-                            //System.out.println("Combinacion buena");
-                            //break;
                         }
                     }
                     if(!flagW){
@@ -167,7 +154,6 @@ public class StockProcessor {
                         flag=false;
                         flagW=false;
                         break;
-                        
                     }
                 }
                 break;
@@ -175,9 +161,6 @@ public class StockProcessor {
                  * Si se han iterado todas las combinaciones posibles y ninguna
                  * es aceptable es imposible de realizar la operación
                  */
-            
-                
-                
             }
             if (flag){
                 //Imprime el tiempo de ejecución de la iteración si se especifica
@@ -185,14 +168,13 @@ public class StockProcessor {
                 if (!timeFlag){
                     System.out.println("Resultado de la orilla A: "+ orillaA);
                     System.out.println("Resultado de la orilla B: "+ orillaB);
+                    System.out.println("Caníbales :"+numero_canibales(orillaB));
+                    System.out.println("Misioneros :"+numero_misioneros(orillaB));
                 }else{
                     System.out.println("Tiempo en milisegundos: "+tiempoIter/1e6);
                 }
-                
-                
                 tiempos.add(tiempoIter);
             }
-            
         }
         long tiempoFinal=0;
         Iterator tiempoIt= tiempos.iterator();
@@ -200,9 +182,9 @@ public class StockProcessor {
             tiempoFinal+=(long)tiempoIt.next();
         }
         if(timeFlag){
+            System.out.println("##########################==FINAL==###########################");
             System.out.println("Tiempo final en segundos:" + tiempoFinal/1e9);
+            System.out.println("##########################=========###########################");
         }
-        
-        
     }
 }

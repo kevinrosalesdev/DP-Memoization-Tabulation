@@ -9,10 +9,7 @@ import java.util.List;
 
 
 
-/**
- *
- * @author Hector
- */
+
 public class Misioneros_Canibales {
 
     /**
@@ -24,51 +21,24 @@ public class Misioneros_Canibales {
         
         List <String> argumentos= new LinkedList();
         
-        
         for(int i =0; i< args.length;i++){
             argumentos.add(args[i]);
             System.out.println(args[i]);
         }
+        
         boolean flag=false;
         if(argumentos.contains("-t")){
             argumentos.remove("-t");
             flag=true;
         }
+        
         StockProcessor prueba= new StockProcessor();
         Iterator <String> iterador= argumentos.iterator();
         String aux="";
+        
         while(iterador.hasNext()){
             aux= iterador.next();
             prueba.misioneros_Canibales(aux, flag);
         }
-        
-        /*
-        List <String> algo= new LinkedList();
-        for (int i = 0; i < 6; i++) {
-            algo.add(""+i);
-        }
-        IteradorCombinacion iterador= new IteradorCombinacion(algo, 4);
-        for (List<String> list : iterador) {
-            System.out.println(list);
-        }
-*/
-        /*
-        List <String> argumentos= new LinkedList();
-        argumentos.add("1");
-        argumentos.add("1");
-        argumentos.add("2");
-        argumentos.add("2");
-        argumentos.add("1");
-        argumentos.add("1");
-        
-        IteratorMi algo= new IteratorMi(argumentos);
-        for (List<String> list : algo) {
-            System.out.println(list);
-        }
-        /*
-        StockProcessor prueba= new StockProcessor();
-        prueba.misioneros_Canibales("fichero10_1.txt", false);
-        */
     }
-    
 }

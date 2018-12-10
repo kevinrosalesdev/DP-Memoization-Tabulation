@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package combinationsGenerator;
 
 import java.util.Iterator;
@@ -10,9 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- *
- * @author Hector
- */
+ * Clase obsoleta, no se usa en todo el programa por problema al intentar hacer
+ * la poda del árbol, debido al recorrido que hace por el mismo. Esto quiere decir que
+ * se salta valores que no debería podar o no poda valores que sí debería podar.
+*/
 public class IteradorCombinacion implements Iterable<List<String>> {
  
     private final List<String> list;
