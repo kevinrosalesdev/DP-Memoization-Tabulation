@@ -59,8 +59,9 @@ public class Utility {
         switch(nin){
             case 1:
                 
-                if ((misionerosOrA<m || caníablesOrA<c) || (misionerosOrA-m<caníablesOrA-c && misionerosOrA-m>1)  ){
-                    System.out.println("filtro 2");
+                if ((misionerosOrA<m || caníablesOrA<c) || (misionerosOrA-m<caníablesOrA-c && misionerosOrA-m>1) 
+                        || (misionerosOrB +m< caníablesOrB+c && caníablesOrB+c<1)){
+                    //System.out.println("filtro 2");
                     return false;
                 }
                /*
@@ -95,8 +96,7 @@ public class Utility {
             default:
                 if (
                     
-                    (misionerosOrA-m>caníablesOrA-c || misionerosOrA-m==0)
-                    && misionerosOrA-m!=1
+                    misionerosOrA-m!=1
                     && (caníablesOrA-c<= misionerosOrA-m || misionerosOrA-m ==0)
                     && (caníablesOrB+c <= misionerosOrB+m)
                     
@@ -109,12 +109,12 @@ public class Utility {
                         caníablesOrB+=c;
                         misionerosOrA-=m;
                         caníablesOrA-=c;
-                        System.out.println("aaaaaaaaaa");
+                        //System.out.println("aaaaaaaaaa");
                         return true;
                     }
                 
 
-                return true;
+                return false;
                 
                 
             }

@@ -130,7 +130,11 @@ public class IteratorMi implements Iterable<List<String>> {
                 if(!filtro.available(Olist)){
                     Olist.removeLast();
                     Olist.addLast("2");
-                    return next();
+                    if(Olist.size()==3){
+                        return Olist;
+                    }else{
+                        return next();
+                    }
                 }
                 if (Olist.size()==3){
                     return Olist;

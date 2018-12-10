@@ -124,6 +124,7 @@ public class StockProcessor {
                         }
                         List<String> auxA= clone(orillaA);
                         List<String> auxB= clone(orillaB);
+                        //System.out.println(t);
                         Iterator ti= t.iterator();
                         while(ti.hasNext()){
                             String auxTi= (String) ti.next();
@@ -131,7 +132,6 @@ public class StockProcessor {
                             auxB.add(auxTi);
                         }
                         //Evalua si es una combinación aceptable
-                        System.out.println(t);
                         if ((numero_misioneros(t)>numero_canibales(t) || numero_misioneros(t)==0)
                                 &&(numero_misioneros(t)<=numero_misioneros(orillaA) && numero_canibales(t)<=numero_canibales(orillaA))
                                 && numero_misioneros(auxA)!=1 
@@ -148,7 +148,10 @@ public class StockProcessor {
                                 orillaA.remove(auxTi2);
                                 orillaB.add(auxTi2);
                             }
-                            //System.out.println("orilla "+orillaA);
+                            //System.out.println("ORILLA_A -->"+orillaA.size());
+                            //System.out.println("Canibales "+numero_canibales(orillaA)+" misioneros "+numero_misioneros(orillaA));
+                            //System.out.println("ORILLA_B -->"+orillaB.size());
+                            ////System.out.println("Canibales "+numero_canibales(orillaB)+" misioneros "+numero_misioneros(orillaB));
                             break;
                             
                             
