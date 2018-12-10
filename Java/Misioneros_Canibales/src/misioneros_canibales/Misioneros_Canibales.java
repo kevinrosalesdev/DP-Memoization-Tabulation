@@ -1,8 +1,6 @@
 
 package misioneros_canibales;
 
-import combinationsGenerator.IteradorCombinacion;
-import combinationsGenerator.IteratorMi;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,8 +11,8 @@ import java.util.List;
 public class Misioneros_Canibales {
 
     /**
-     * Main en el que se invocan las llamadas al algoritmo de fuerza
-     * bruta con los archivos especificados por parámetros
+     * Main en el que se invocan las llamadas al algoritmo de backtracking
+     * con los archivos especificados por parámetros
      * @param args Argumentos que se pasan al ejecutable
      */
     public static void main(String[] args) {

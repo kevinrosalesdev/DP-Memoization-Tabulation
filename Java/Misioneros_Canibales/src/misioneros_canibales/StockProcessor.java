@@ -2,7 +2,6 @@
 package misioneros_canibales;
 
 import Reader.FileTextReader;
-import combinationsGenerator.IteradorCombinacion;
 import combinationsGenerator.IteratorMi;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -46,7 +45,7 @@ public class StockProcessor {
     }
     /**
      * 
-     * Algoritmo de fuerza bruta para calcular el problema de los misioneros
+     * Algoritmo de backtracking para calcular el problema de los misioneros
      * y caníbales
      * @param fichero fichero de texto en el que se encuentran los misioneros y
      * los caníbales
