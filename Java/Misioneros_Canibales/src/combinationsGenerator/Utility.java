@@ -10,21 +10,21 @@ public class Utility {
     
     
     private int misionerosOrB=0;
-    private int caníablesOrB=0;
+    private int caníbalesOrB=0;
     private int misionerosOrA=0;
-    private int caníablesOrA=0;
+    private int caníbalesOrA=0;
     /**
      * Constructor de la clase Utility en la que se inicializa los valores de la
-     * orillaA con el número de misioneros y caníables que existen en la orilla.
+     * orillaA con el número de misioneros y caníbales que existen en la orilla.
      * @param list Lista que representa la orillaA en la que están contenidos los
-     * misioneros y los caníables.
+     * misioneros y los caníbales.
      */
     public Utility(List <String> list){
         for (String string : list) {
             if (string.equals("1")){
                 misionerosOrA++;
             }else{
-                caníablesOrA++;
+                caníbalesOrA++;
             }
         }
     }
@@ -56,30 +56,30 @@ public class Utility {
         switch(nin){
             //Caso para cuando el tamaño de la combinación es 2
             case 1:
-                if ((misionerosOrA<m || caníablesOrA<c) 
-                        || (misionerosOrA-m<caníablesOrA-c && misionerosOrA-m>1) 
-                        || (misionerosOrB +m< caníablesOrB+c && caníablesOrB+c<1)
-                        || (misionerosOrA==caníablesOrA && m==c )){
+                if ((misionerosOrA<m || caníbalesOrA<c) 
+                        || (misionerosOrA-m<caníbalesOrA-c && misionerosOrA-m>1) 
+                        || (misionerosOrB +m< caníbalesOrB+c && caníbalesOrB+c<1)
+                        || (misionerosOrA==caníbalesOrA && m==c )){
                     return false;
                 }
                 return true; 
             //Caso para cuando el tamaño de la combinación es 1    
             case 2:
                 if((misionerosOrA-m<=0 && m==1) 
-                        || (misionerosOrA-m<caníablesOrA-c && misionerosOrA-m>2)){
+                        || (misionerosOrA-m<caníbalesOrA-c && misionerosOrA-m>2)){
                     return false;
                 }
                 return true;
             //caso para cuando el tamaño de la combinación fuese 3
             default:
                 if (misionerosOrA-m!=1
-                    && (caníablesOrA-c<= misionerosOrA-m || misionerosOrA-m ==0)
-                    && (caníablesOrB+c <= misionerosOrB+m)){
+                    && (caníbalesOrA-c<= misionerosOrA-m || misionerosOrA-m ==0)
+                    && (caníbalesOrB+c <= misionerosOrB+m)){
                     //Se aumentan y disminuyen respectivas orillas para la siguiente iteración
                     misionerosOrB+=m;
-                    caníablesOrB+=c;
+                    caníbalesOrB+=c;
                     misionerosOrA-=m;
-                    caníablesOrA-=c;
+                    caníbalesOrA-=c;
                     return true;
                 }
                 return false;

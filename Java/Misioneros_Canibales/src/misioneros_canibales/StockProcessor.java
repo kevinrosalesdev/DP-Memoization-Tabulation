@@ -71,8 +71,8 @@ public class StockProcessor {
             //Condiciones para no seguir con la iteración
             if (numero_canibales(orillaA) > numero_misioneros(orillaA)){
                 System.out.println("El número de canibales no puede superar al de misioneros");
-                System.out.println("El número de misoneros: " + numero_misioneros(orillaA));
-                System.out.println("El número de misoneros: " + numero_canibales(orillaA));
+                System.out.println("El número de misioneros: " + numero_misioneros(orillaA));
+                System.out.println("El número de misioneros: " + numero_canibales(orillaA));
                 continue;
             }
             if (orillaA.size()%3!=0){
@@ -82,8 +82,8 @@ public class StockProcessor {
                 continue;
             }
             
-            System.out.println("El número de misoneros: " + numero_misioneros(orillaA));
-            System.out.println("El número de canibles: " + numero_canibales(orillaA));
+            System.out.println("El número de misioneros: " + numero_misioneros(orillaA));
+            System.out.println("El número de caníbales: " + numero_canibales(orillaA));
             
             Iterator p= orillaA.iterator();
             boolean flag= true;
@@ -132,7 +132,7 @@ public class StockProcessor {
                                 && (numero_canibales(auxA)<= numero_misioneros(auxA) || numero_misioneros(auxA)==0)
                                 && (numero_canibales(auxB) <= numero_misioneros(auxB))){
                             if (!timeFlag){
-                                System.out.println("Combinacion ganadoras:"+ t);
+                                System.out.println("Combinación ganadora:"+ t);
                             }
                             Iterator ti2= t.iterator();
                             //Efectua el cambio teniendo ya la combinación aceptable
