@@ -60,7 +60,8 @@ public class Utility {
             case 1:
                 
                 if ((misionerosOrA<m || caníablesOrA<c) || (misionerosOrA-m<caníablesOrA-c && misionerosOrA-m>1) 
-                        || (misionerosOrB +m< caníablesOrB+c && caníablesOrB+c<1)){
+                        || (misionerosOrB +m< caníablesOrB+c && caníablesOrB+c<1)
+                        || (misionerosOrA==caníablesOrA && m==c )){
                     //System.out.println("filtro 2");
                     return false;
                 }
