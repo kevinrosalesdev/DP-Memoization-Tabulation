@@ -10,8 +10,6 @@
 
 >Note: The opponent is as clever as the user.
 
-### -> [Características del Trabajo](https://cv-aep.ulpgc.es/cv/ulpgctp19/pluginfile.php/177244/mod_resource/content/4/Laboratorio-3.pdf)
-
 ### Comandos para hacerlos funcionar
 
 ###### Evidentemente, es necesario tener java, python y gcc en el Path del SO.
@@ -35,19 +33,9 @@
   "Nombre del Ejecutable" [-t/-T] [Rutas Relativas de los Ficheros]
   ~~~
 
-### Informe
-
->Disponible en Google Drive
-
 ### Lenguajes [Memoization]:
 * Python
 * C++
 
 ### Lenguaje [Backtracking CyM]:
 * Java
-
-### Propuesta Temporal:
-* 29/11: Clase Práctica 1
-* 7/12: Python 100%. C++ casi completado. Iterador 100% implementado en Java **sin** aprovechar sus características aún.
-* 13/12: Clase Práctica 2
-* 14/12: Entrega del Trabajo
