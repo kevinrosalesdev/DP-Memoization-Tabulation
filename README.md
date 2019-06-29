@@ -73,7 +73,7 @@ python DP-PR3.py [-t/-T] input_file_1 [input_file_2][input_file_N]
 
 ### C++ (Compiled with GCC)
 
-Go to /DP-Memoization-Tabulation/C++ and execute in console:
+Go to /DP-Memoization-Tabulation/C++/ and execute in console:
 
 ~~~bash
 g++ DP-PR3.cpp -o "Executable Name"
