@@ -49,7 +49,7 @@ def llamada_tiempo_memoization(fichero, ft):
         iteraciones = iteraciones + 1
         print("################ " +
               str(iteraciones) +
-              " iteracion ##############")
+              " iteración ##############")
         arr = []
         for palabra in linea.split():
             arr.append(int(palabra))
@@ -74,7 +74,7 @@ def llamada_tiempo_tabulation(fichero, ft):
         iteraciones = iteraciones + 1
         print("################ " +
               str(iteraciones) +
-              " iteracion ##############")
+              " iteración ##############")
         arr = []
         for palabra in linea.split():
             arr.append(int(palabra))
@@ -91,10 +91,10 @@ def llamada_funcionamiento_tabulation(fichero):
         iteraciones = iteraciones + 1
         print("################ " +
               str(iteraciones) +
-              " iteracion ##############")
+              " iteración ##############")
         arr = []
         for palabra in linea.split(): arr.append(int(palabra))
-        print("Para" + str(arr))
+        print("Para " + str(arr))
         print(optimalStrategyOfGameTabulation(arr, len(arr)))
 
 
@@ -104,7 +104,7 @@ def llamada_funcionamiento_memoization(fichero):
         iteraciones = iteraciones + 1
         print("################ " +
               str(iteraciones) +
-              " iteracion ##############")
+              " iteración ##############")
         arr = []
         for palabra in linea.split():
             arr.append(int(palabra))
@@ -116,7 +116,7 @@ def llamada_funcionamiento_memoization(fichero):
             for j in range(len(arr)):
                 # asignación para la lista
                 table[i].append(0)
-        print("Para" + str(arr))
+        print("Para " + str(arr))
         print(optimalStrategyOfGameMemoization(table, arr, 0, len(arr) - 1))
 
 
